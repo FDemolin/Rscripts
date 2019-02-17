@@ -184,7 +184,18 @@ example('matplot')
  str_replace_all() #substitui todas as ocorrencias
  grepl(pattern = "dono", x= "O Homem é dono do que cala") #Retorna true se encontrar um padrao fornecido na string
  
-
+ #### FATORES ####
+ 
+ #Podem ser ou não ordernados
+ 
+ notas <- c('A','B','A','C','A','D','B')
+ 
+ fatornota <- factor(notas, ordered = TRUE, levels = c('A','B','C','D'), labels = c('V','A','Q','Z'))
+ 
+ class(fatornota)
+ fatornota
+ summary(fatornota)
+ 
  #### FUNÇÃO ####
  
  somaeprinta<-function(n1,n2){
