@@ -153,7 +153,7 @@ example('matplot')
  
  mode( lista1 )
  typeof( lista1 )
- class( lista1 )
+ class( lista1 ) #MOSTRA SE É UM VETOR LISTA MATRIX OU DF
 
  
  #### STRINGS####
@@ -206,4 +206,10 @@ example('matplot')
  }
  
  somaeprinta(436,643)
+ 
+ #### UNLIST ####
+ 
+ # Achata uma lista - varias dimensoes em 1 unica
+ 
+ unlist(list1)
  
