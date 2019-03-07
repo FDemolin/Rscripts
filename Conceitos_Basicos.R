@@ -38,6 +38,11 @@ help.search('randomForest')
 RSiteSearch('matplot')
 example('matplot')
 
+#### Listar conteudo dos pacotes ####
+
+ls(pos = "package:ggplot2")
+ls(getNamespace("ggplot2"),all.names = T)
+lsf.str("package:ggplot2")
 
 #### OPERADORES ####
  
@@ -211,5 +216,21 @@ example('matplot')
  
  # Achata uma lista - varias dimensoes em 1 unica
  
- unlist(list1)
+ unlist
  
+ #### FIND & REPLACE ####
+
+ grep() #Retorna se encontrou ou nao o padrao, se value = F retorna o indice, se value = T retorna a string toda
+ grepl() #retorna verdadeiro ou falso
+ gsub() #find&replace
+ regexpr() #Encontrar a posicao do padrao
+ 
+ #### DATAS ####
+ 
+ # Data DATE e time POSIXT
+ # Funcao ISOdate() para datas padrao
+ install.packages("lubridate")
+ library(lubridate)
+ ymd("20180604")
+mdy("06-04-2018") 
+dmy("04/06/2018") 
