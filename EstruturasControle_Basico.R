@@ -47,4 +47,9 @@ for(i in 1:20){
 
 ### WHILE ###
 
+x <- 7
 
+while(x<14){
+  x = x+2
+  print(x)
+}
