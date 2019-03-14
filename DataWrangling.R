@@ -4,10 +4,11 @@
 
 
 #### Packages Download & Call ####
-packs <- c("quantmod", "xts","moments","ggplot2","tidyr","dplyr","readr","gapminder")
+packs <- c("quantmod", "xts","moments","ggplot2","tidyr","dplyr","readr","gapminder","caret")
 new.packages <- packs[!(packs %in% installed.packages()[,"Package"])]
 if(length(new.packages)) install.packages(new.packages)
 lapply(packs, require, character.only = TRUE)
+
 
 #### CODE ####
 
@@ -21,4 +22,15 @@ gapminder %>%
 gapminder %>% 
   group_by(continent) %>% 
   summarise(Avg_Life = mean(lifeExp)) %>% 
-  arrange(desc(continent))
+  arrange(desc(continent)) %>% 
+  spread(continent, Avg_Life)
+
+
+gapminder %>% 
+  select(-c("year","pop"))
+
+gapminder %>% 
+  subset(year == 2007) %>% 
+  ggplot(aes(x=reorder(country, -lifeExp),y= lifeExp, fill=lifeExp))+geom_bar(stat = "identity") + theme(axis.text.x = element_text(angle = 90, hjust = 1))
+
+
